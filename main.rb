@@ -112,6 +112,7 @@ class Main
   def add_route
     first_station = ask_user_to_select_station(stations, "Select first station:")
     last_station  = ask_user_to_select_station(stations, "Select last station:") if first_station
+    routes << Route.new(first_station, last_station)
   rescue RuntimeError => e
     puts e.message
   end
